@@ -437,6 +437,24 @@
         .remove-btn:hover {
             background: #b71c1c; /* Darker Red */
         }
+
+        .edit-btn {
+            background: #ffeb3b; /* Gold */
+            color: #004d40; /* Deep Teal */
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            margin-left: 10px; /* Add some spacing */
+        }
+
+        .edit-btn:hover {
+            background: #fbc02d; /* Darker Gold */
+        }
         
         /* Instructions */
         .instructions {
@@ -628,6 +646,120 @@
             color: #d32f2f;
             font-weight: bold;
         }
+
+        /* Modal for editing menu item */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 15px;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            color: #004d40;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-content .form-group {
+            margin-bottom: 15px;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #004d40;
+        }
+
+        .modal-content input,
+        .modal-content textarea,
+        .modal-content select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #b2dfdb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .modal-content input:focus,
+        .modal-content textarea:focus,
+        .modal-content select:focus {
+            outline: none;
+            border-color: #00796b;
+        }
+
+        .modal-content button {
+            background: #00796b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .modal-content button:hover {
+            background: #004d40;
+            transform: translateY(-2px);
+        }
+
+        /* New CSS for category separator */
+        .category-separator {
+            width: 100%;
+            height: 40px; /* Adjust height for desired space */
+            margin: 20px 0; /* Add vertical margin */
+            border-bottom: 2px dashed #b2dfdb; /* Optional: a dashed line */
+            grid-column: 1 / -1; /* Make it span all columns in the grid */
+        }
+
+        /* Style for category headers */
+        .category-header {
+            grid-column: 1 / -1; /* Span across all columns */
+            text-align: center;
+            font-size: 1.8rem;
+            color: #004d40; /* Deep Teal */
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffeb3b; /* Gold underline */
+        }
     </style>
 </head>
 <body>
@@ -807,6 +939,46 @@
         </div>
     </div>
 
+    <!-- Modal for editing menu item -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Edit Menu Item</h2>
+            <div class="form-group">
+                <label for="editItemName">Item Name</label>
+                <input type="text" id="editItemName">
+            </div>
+            <div class="form-group">
+                <label for="editItemDesc">Description</label>
+                <textarea id="editItemDesc" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="editItemImage">Image URL (Optional)</label>
+                <input type="text" id="editItemImage">
+                <div style="margin-top: 10px;">
+                    <input type="checkbox" id="removeImageCheckbox">
+                    <label for="removeImageCheckbox" style="display: inline; font-weight: normal;">Remove Image</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="editItemCategory">Category</label>
+                <select id="editItemCategory">
+                    <option value="">-- Select Category --</option>
+                    <option value="Roti">Roti</option>
+                    <option value="Sabji">Sabji</option>
+                    <option value="Sweets">Sweets</option>
+                    <option value="Chat">Chat</option>
+                    <option value="Chat Starters/Soup">Chat Starters/Soup</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Dal">Dal</option>
+                    <option value="Extra">Extra</option>
+                    <option value="South Indian Items">South Indian Items</option>
+                </select>
+            </div>
+            <button id="saveEditBtn">Save Changes</button>
+        </div>
+    </div>
+
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
@@ -873,6 +1045,16 @@
         const ticketsTabContent = document.getElementById('ticketsTabContent');
         const ticketsTableBody = document.getElementById('ticketsTableBody');
 
+        // Edit Modal elements
+        const editModal = document.getElementById('editModal');
+        const closeButton = document.querySelector('.close-button');
+        const editItemName = document.getElementById('editItemName');
+        const editItemDesc = document.getElementById('editItemDesc');
+        const editItemImage = document.getElementById('editItemImage');
+        const editItemCategory = document.getElementById('editItemCategory');
+        const saveEditBtn = document.getElementById('saveEditBtn');
+        const removeImageCheckbox = document.getElementById('removeImageCheckbox'); // New checkbox for removing image
+
         let currentUserName = null;
         let currentUserMid = null;
         let isAdminMode = false;
@@ -887,12 +1069,26 @@
         let cupData = {}; // To store the occupancy status of cups
         let currentFilterCategory = 'All'; // Default filter category
         let allRegisteredUsers = {}; // To store all registered users for the tickets tab
+        let editingItemId = null; // To store the ID of the item being edited
 
         const ADMIN_CODE = "admin123";
         const NUM_FLOORS = 6;
         const NUM_ROOMS_PER_FLOOR = 14;
         const NUM_CUPS_PER_ROOM = 16;
         const MAX_VOTES_PER_CATEGORY = 2; // <-- limit per category
+
+        // Define the desired order of categories for "All Dishes" view
+        const categoryOrder = [
+            "Roti",
+            "Sabji",
+            "Dal",
+            "Rice",
+            "Sweets",
+            "Chat",
+            "Chat Starters/Soup",
+            "South Indian Items",
+            "Extra"
+        ];
 
         // Function to populate floor dropdown
         function populateFloors() {
@@ -1063,22 +1259,53 @@
         function renderMenuItems() {
             menuGrid.innerHTML = '';
             
-            const filteredItems = menuItems.filter(item => {
+            let itemsToDisplay = [...menuItems]; // Create a copy to sort
+
+            // Apply custom sorting only when "All Dishes" is selected
+            if (currentFilterCategory === 'All') {
+                itemsToDisplay.sort((a, b) => {
+                    const categoryA = a.category || 'Uncategorized';
+                    const categoryB = b.category || 'Uncategorized';
+
+                    const indexA = categoryOrder.indexOf(categoryA);
+                    const indexB = categoryOrder.indexOf(categoryB);
+
+                    // Handle categories not in categoryOrder (place them at the end)
+                    const finalIndexA = indexA === -1 ? categoryOrder.length : indexA;
+                    const finalIndexB = indexB === -1 ? categoryOrder.length : indexB;
+
+                    if (finalIndexA !== finalIndexB) {
+                        return finalIndexA - finalIndexB;
+                    } else {
+                        // If categories are the same, sort alphabetically by name
+                        return a.name.localeCompare(b.name);
+                    }
+                });
+            }
+
+            const filteredItems = itemsToDisplay.filter(item => {
                 return currentFilterCategory === 'All' || item.category === currentFilterCategory;
             });
 
+            let lastCategory = null; // Track the last category rendered
+
             filteredItems.forEach(item => {
+                const currentCategory = item.category || 'Uncategorized';
+
+                // Add a category header if the category changes and it's not the very first item
+                if (currentFilterCategory === 'All' && currentCategory !== lastCategory) {
+                    const header = document.createElement('h2');
+                    header.className = 'category-header';
+                    header.textContent = currentCategory;
+                    menuGrid.appendChild(header);
+                }
+
                 const menuItem = document.createElement('div');
                 menuItem.className = 'menu-item';
                 menuItem.dataset.id = item.id;
                 
-                const foodImages = [
-                    'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4d2080c0-d9a8-4f4b-88cf-6858a2daa716.png',
-                    'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/62a67c17-c5c6-4a29-8ccc-d5d8db19e6a5.png',
-                    'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a523f729-7cad-422f-b2af-a83fa66ef5ae.png',
-                    'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/93b60d78-3619-43d7-824f-3812ab008390.png'
-                ];
-                const displayImage = item.image || foodImages[Math.floor(Math.random() * foodImages.length)];
+                // Removed image URL and random image selection
+                const displayImage = ''; // No image
                 
                 const hasVoted = currentUserMid && userVotedItems[item.id];
                 const cat = item.category || 'Uncategorized';
@@ -1087,9 +1314,14 @@
                 // Determine button HTML for this item:
                 let actionButtonHTML = '';
                 if (isAdminMode) {
-                    actionButtonHTML = `<button class="remove-btn" data-id="${item.id}">
-                                            <i class="fas fa-trash"></i> Remove
-                                        </button>`;
+                    actionButtonHTML = `
+                        <button class="remove-btn" data-id="${item.id}">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                        <button class="edit-btn" data-id="${item.id}">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    `;
                 } else if (!currentUserMid) {
                     actionButtonHTML = ''; // Not logged in, no vote buttons
                 } else {
@@ -1109,7 +1341,7 @@
                 }
 
                 menuItem.innerHTML = `
-                    <img src="${displayImage}" alt="${item.name}" class="menu-image">
+                    ${displayImage ? `<img src="${displayImage}" alt="${item.name}" class="menu-image">` : ''}
                     <div class="menu-content">
                         <h3 class="menu-title">${item.name}</h3>
                         <p class="menu-category">${cat}</p>
@@ -1124,6 +1356,7 @@
                 `;
                 
                 menuGrid.appendChild(menuItem);
+                lastCategory = currentCategory; // Update last category
             });
 
             // Attach handlers
@@ -1132,6 +1365,12 @@
                     btn.addEventListener('click', (e) => {
                         const id = e.target.closest('.remove-btn').dataset.id;
                         removeMenuItem(id);
+                    });
+                });
+                document.querySelectorAll('.edit-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = e.target.closest('.edit-btn').dataset.id;
+                        openEditModal(id);
                     });
                 });
             } else if (currentUserMid) {
@@ -1194,6 +1433,60 @@
                         alert("Failed to remove menu item.");
                     });
             }
+        }
+
+        // Function to open the edit modal and populate it with item data
+        function openEditModal(id) {
+            editingItemId = id;
+            const itemToEdit = menuItems.find(item => item.id === id);
+            if (itemToEdit) {
+                editItemName.value = itemToEdit.name;
+                editItemDesc.value = itemToEdit.description;
+                editItemImage.value = itemToEdit.image;
+                editItemCategory.value = itemToEdit.category;
+                removeImageCheckbox.checked = false; // Ensure checkbox is unchecked when opening
+                editModal.style.display = 'block';
+            }
+        }
+
+        // Function to save edited menu item
+        function saveEditedMenuItem() {
+            if (!editingItemId) return;
+
+            const updatedName = editItemName.value.trim();
+            const updatedDesc = editItemDesc.value.trim();
+            let updatedImage = editItemImage.value.trim(); // Use let as it might change
+            const updatedCategory = editItemCategory.value;
+
+            if (!updatedName) {
+                alert('Item name cannot be empty.');
+                return;
+            }
+            if (!updatedCategory) {
+                alert('Please select a category.');
+                return;
+            }
+
+            // If "Remove Image" checkbox is checked, set image to empty string
+            if (removeImageCheckbox.checked) {
+                updatedImage = '';
+            }
+
+            menuRef.child(editingItemId).update({
+                name: updatedName,
+                description: updatedDesc,
+                image: updatedImage, // Use the potentially cleared image value
+                category: updatedCategory
+            })
+            .then(() => {
+                alert('Menu item updated successfully!');
+                editModal.style.display = 'none';
+                editingItemId = null;
+            })
+            .catch(error => {
+                console.error("Error updating menu item: ", error);
+                alert("Failed to update menu item.");
+            });
         }
 
         // Function to vote for a menu item and update Firebase
@@ -1293,7 +1586,7 @@
                     const date = new Date(user.lastVoted);
                     lastVotedCell.textContent = date.toLocaleString();
                 } else {
-                    lastVoted.textContent = 'N/A';
+                    lastVotedCell.textContent = 'N/A';
                 }
             }
         }
@@ -1457,6 +1750,21 @@
                 }
             });
         });
+
+        // Edit Modal Event Listeners
+        closeButton.addEventListener('click', () => {
+            editModal.style.display = 'none';
+            editingItemId = null;
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === editModal) {
+                editModal.style.display = 'none';
+                editingItemId = null;
+            }
+        });
+
+        saveEditBtn.addEventListener('click', saveEditedMenuItem);
 
         // Listen for changes in menu items from Firebase
         menuRef.on('value', (snapshot) => {
