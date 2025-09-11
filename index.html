@@ -6,7 +6,7 @@
     <title>Bhagwan Swaminarayan Shradh Rasoi - Menu Voting</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* New Color Scheme: Deep Teal & Gold */
+        /* New Color Scheme: Only Saffron */
         * {
             margin: 0;
             padding: 0;
@@ -15,8 +15,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #e0f2f7 0%, #c8e6f0 100%); /* Light blue/teal gradient */
-            color: #2c3e50; /* Dark blue/grey for text */
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%); /* Light Saffron/Cream gradient */
+            color: #6D4C41; /* Dark Brown/Saffron for text */
             min-height: 100vh;
             padding: 0;
             display: flex;
@@ -30,7 +30,7 @@
         /* Sidebar */
         .sidebar {
             width: 280px;
-            background: linear-gradient(180deg, #004d40 0%, #00796b 100%); /* Deep Teal gradient */
+            background: linear-gradient(180deg, #FF9933 0%, #FF6600 100%); /* Saffron gradient */
             color: white;
             padding: 20px;
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -44,14 +44,14 @@
         }
 
         .sidebar h2 {
-            color: #ffeb3b; /* Gold */
+            color: #FFFFFF; /* White */
             margin-bottom: 15px;
             font-size: 1.5rem;
             text-align: center;
         }
 
         .sidebar-section {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             padding: 15px;
         }
@@ -60,7 +60,7 @@
             display: block;
             margin-bottom: 10px;
             font-weight: 600;
-            color: #e0f2f7; /* Lighter teal */
+            color: #FFFFFF; /* White */
         }
 
         .sidebar-section select {
@@ -74,8 +74,8 @@
         }
 
         .sidebar-section button {
-            background: #ffeb3b; /* Gold */
-            color: #004d40; /* Deep Teal */
+            background: #FF6600; /* Darker Saffron */
+            color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 8px;
@@ -88,7 +88,7 @@
         }
 
         .sidebar-section button:hover {
-            background: #fbc02d; /* Darker Gold */
+            background: #E65100; /* Even Darker Saffron */
         }
 
         .sidebar-cup-list {
@@ -120,7 +120,7 @@
         }
 
         .sidebar-cup-item .cup-status.available {
-            color: #a7ffeb; /* Light Aqua for available */
+            color: #a7ffeb; /* Light Aqua for available - kept for contrast, could be saffron shade */
         }
 
         .sidebar-cup-item button {
@@ -131,12 +131,12 @@
         }
 
         .sidebar-cup-item button.remove-cup-btn {
-            background: #d32f2f; /* Red */
+            background: #D32F2F; /* Red - kept for danger, could be dark saffron */
             color: white;
         }
 
         .sidebar-cup-item button.remove-cup-btn:hover {
-            background: #b71c1c; /* Darker Red */
+            background: #B71C1C; /* Darker Red */
         }
 
         .main-content {
@@ -149,7 +149,7 @@
             text-align: center;
             padding: 30px 0;
             margin-bottom: 30px;
-            background: linear-gradient(135deg, #004d40 0%, #00796b 100%); /* Deep Teal gradient */
+            background: linear-gradient(135deg, #FF6600 0%, #FF9933 100%); /* Saffron gradient */
             color: white;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -171,7 +171,7 @@
         header h1 {
             font-size: 2.2rem;
             margin-bottom: 10px;
-            color: #ffeb3b; /* Gold */
+            color: #FFFFFF; /* White */
         }
         
         header p {
@@ -179,46 +179,9 @@
             opacity: 0.9;
         }
 
-        /* Login Section */
+        /* Login Section - Hidden */
         .login-section {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .login-section h2 {
-            color: #004d40; /* Deep Teal */
-            margin-bottom: 20px;
-        }
-
-        .login-section input {
-            width: calc(100% - 20px);
-            max-width: 300px;
-            padding: 12px 15px;
-            border: 2px solid #b2dfdb; /* Light Teal */
-            border-radius: 8px;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .login-section button {
-            background: #00796b; /* Teal */
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .login-section button:hover {
-            background: #004d40; /* Deep Teal */
-            transform: translateY(-2px);
+            display: none; /* Hidden as per request */
         }
 
         .user-info {
@@ -226,11 +189,11 @@
             margin-bottom: 20px;
             font-size: 1.1rem;
             font-weight: 600;
-            color: #004d40; /* Deep Teal */
+            color: #FF6600; /* Darker Saffron */
         }
 
         .user-info span {
-            color: #00796b; /* Teal */
+            color: #FF9933; /* Saffron */
         }
         
         /* Admin Toggle */
@@ -242,7 +205,7 @@
         
         .admin-btn {
             padding: 12px 25px;
-            background: #00796b; /* Teal */
+            background: #FF6600; /* Darker Saffron */
             color: white;
             border: none;
             border-radius: 30px;
@@ -253,11 +216,11 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 121, 107, 0.2);
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
         }
         
         .admin-btn:hover {
-            background: #004d40; /* Deep Teal */
+            background: #E65100; /* Even Darker Saffron */
             transform: translateY(-2px);
         }
         
@@ -272,7 +235,7 @@
         }
         
         .admin-form h2 {
-            color: #004d40; /* Deep Teal */
+            color: #FF6600; /* Darker Saffron */
             margin-bottom: 20px;
             text-align: center;
         }
@@ -285,13 +248,13 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #004d40; /* Deep Teal */
+            color: #FF6600; /* Darker Saffron */
         }
         
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #b2dfdb; /* Light Teal */
+            border: 2px solid #FFCC80; /* Light Saffron */
             border-radius: 8px;
             font-size: 1rem;
             transition: border 0.3s ease;
@@ -299,11 +262,11 @@
         
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             outline: none;
-            border-color: #00796b; /* Teal */
+            border-color: #FF9933; /* Saffron */
         }
         
         .submit-btn {
-            background: #00796b; /* Teal */
+            background: #FF6600; /* Darker Saffron */
             color: white;
             border: none;
             padding: 12px 25px;
@@ -318,7 +281,7 @@
         }
         
         .submit-btn:hover {
-            background: #004d40; /* Deep Teal */
+            background: #E65100; /* Even Darker Saffron */
             transform: translateY(-2px);
         }
         
@@ -355,19 +318,19 @@
         
         .menu-title {
             font-size: 1.3rem;
-            color: #004d40; /* Deep Teal */
+            color: #FF6600; /* Darker Saffron */
             margin-bottom: 8px;
         }
 
         .menu-category {
             font-size: 0.9rem;
-            color: #00796b; /* Teal */
+            color: #FF9933; /* Saffron */
             margin-bottom: 5px;
             font-weight: 600;
         }
         
         .menu-desc {
-            color: #546e7a; /* Blue Grey */
+            color: #8D6E63; /* Brownish Saffron */
             margin-bottom: 15px;
             line-height: 1.5;
         }
@@ -381,15 +344,15 @@
         
         .vote-count {
             font-weight: bold;
-            color: #004d40; /* Deep Teal */
+            color: #FF6600; /* Darker Saffron */
             display: flex;
             align-items: center;
             gap: 5px;
         }
         
         .vote-btn {
-            background: #e0f2f7; /* Light Teal */
-            border: 2px solid #b2dfdb; /* Light Teal */
+            background: #FFCC80; /* Light Saffron */
+            border: 2px solid #FFCC80; /* Light Saffron */
             padding: 8px 15px;
             border-radius: 20px;
             cursor: pointer;
@@ -400,19 +363,19 @@
         }
         
         .vote-btn:hover {
-            background: #00796b; /* Teal */
+            background: #FF9933; /* Saffron */
             color: white;
-            border-color: #00796b; /* Teal */
+            border-color: #FF9933; /* Saffron */
         }
         
         .voted {
-            background: #00796b; /* Teal */
+            background: #FF9933; /* Saffron */
             color: white;
-            border-color: #00796b; /* Teal */
+            border-color: #FF9933; /* Saffron */
         }
         
         .category-closed-btn {
-            background: #9e9e9e; /* Gray for closed */
+            background: #9e9e9e; /* Gray for closed - kept for neutrality */
             color: white;
             border-color: #9e9e9e;
             cursor: not-allowed;
@@ -422,7 +385,7 @@
         }
 
         .remove-btn {
-            background: #d32f2f; /* Red */
+            background: #D32F2F; /* Red - kept for danger */
             color: white;
             border: none;
             padding: 8px 15px;
@@ -435,12 +398,12 @@
         }
         
         .remove-btn:hover {
-            background: #b71c1c; /* Darker Red */
+            background: #B71C1C; /* Darker Red */
         }
 
         .edit-btn {
-            background: #ffeb3b; /* Gold */
-            color: #004d40; /* Deep Teal */
+            background: #FF9933; /* Saffron */
+            color: white;
             border: none;
             padding: 8px 15px;
             border-radius: 20px;
@@ -453,7 +416,7 @@
         }
 
         .edit-btn:hover {
-            background: #fbc02d; /* Darker Gold */
+            background: #FF6600; /* Darker Saffron */
         }
         
         /* Instructions */
@@ -466,7 +429,7 @@
         }
         
         .instructions h2 {
-            color: #004d40; /* Deep Teal */
+            color: #FF6600; /* Darker Saffron */
             margin-bottom: 15px;
             text-align: center;
         }
@@ -482,7 +445,7 @@
 
         /* Upgrade Account Section (now in sidebar) */
         .sidebar .upgrade-account-section {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             padding: 15px;
             border-radius: 10px;
             text-align: center;
@@ -490,13 +453,13 @@
         }
 
         .sidebar .upgrade-account-section h2 {
-            color: #ffeb3b; /* Gold */
+            color: #FFFFFF; /* White */
             margin-bottom: 15px;
             font-size: 1.2rem; /* Adjusted for sidebar */
         }
 
         .sidebar .upgrade-account-section p {
-            color: #e0f2f7; /* Lighter teal */
+            color: #FFFFFF; /* White */
             margin-bottom: 10px;
             font-size: 0.9rem;
         }
@@ -504,7 +467,7 @@
         .sidebar .upgrade-account-section input {
             width: 100%;
             padding: 10px;
-            border: 1px solid #b2dfdb; /* Light Teal */
+            border: 1px solid #FFCC80; /* Light Saffron */
             border-radius: 5px;
             font-size: 0.9rem;
             margin-bottom: 10px;
@@ -513,8 +476,8 @@
         }
 
         .sidebar .upgrade-account-section button {
-            background: #ffeb3b; /* Gold */
-            color: #004d40; /* Deep Teal */
+            background: #FF6600; /* Darker Saffron */
+            color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 8px;
@@ -526,14 +489,88 @@
         }
 
         .sidebar .upgrade-account-section button:hover {
-            background: #fbc02d; /* Darker Gold */
+            background: #E65100; /* Even Darker Saffron */
+        }
+
+        /* Incharges Section in Sidebar */
+        .sidebar .incharges-sidebar-section {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .sidebar .incharges-sidebar-section h2 {
+            color: #FFFFFF;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .sidebar .incharges-sidebar-section .form-group label {
+            color: #FFFFFF;
+        }
+
+        .sidebar .incharges-sidebar-section .tickets-table {
+            background: none; /* Remove white background from table */
+            box-shadow: none; /* Remove shadow from table */
+            margin-top: 15px;
+        }
+
+        .sidebar .incharges-sidebar-section .tickets-table th {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .sidebar .incharges-sidebar-section .tickets-table td {
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar .incharges-sidebar-section .tickets-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar .incharges-sidebar-section .tickets-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar .incharges-sidebar-section .remove-btn {
+            background: #D32F2F;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .incharges-sidebar-section .remove-btn:hover {
+            background: #B71C1C;
+        }
+
+        .sidebar .incharges-sidebar-section .vote-as-incharge-btn {
+            background: #4CAF50; /* Green for voting */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 5px;
+        }
+
+        .sidebar .incharges-sidebar-section .vote-as-incharge-btn:hover {
+            background: #45a049;
         }
         
         /* Footer */
         footer {
             text-align: center;
             margin-top: 40px;
-            color: #00796b; /* Teal */
+            color: #FF9933; /* Saffron */
             padding: 20px;
             font-weight: 600;
         }
@@ -583,19 +620,19 @@
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            color: #00796b;
+            color: #FF9933; /* Saffron */
             transition: all 0.3s ease;
             border-radius: 8px;
         }
 
         .tab-button.active {
-            background: #00796b;
+            background: #FF6600; /* Darker Saffron */
             color: white;
-            box-shadow: 0 2px 10px rgba(0, 121, 107, 0.3);
+            box-shadow: 0 2px 10px rgba(255, 102, 0, 0.3);
         }
 
         .tab-button:hover:not(.active) {
-            background: #e0f2f7;
+            background: #FFF8E1; /* Light Saffron/Cream */
         }
 
         .tab-content {
@@ -620,30 +657,30 @@
         .tickets-table th, .tickets-table td {
             padding: 12px 15px;
             text-align: left;
-            border-bottom: 1px solid #e0f2f7;
+            border-bottom: 1px solid #FFECB3; /* Light Saffron */
         }
 
         .tickets-table th {
-            background: #004d40;
+            background: #FF6600; /* Darker Saffron */
             color: white;
             font-weight: 600;
         }
 
         .tickets-table tr:nth-child(even) {
-            background-color: #f8fcfd;
+            background-color: #FFF8E1; /* Light Saffron/Cream */
         }
 
         .tickets-table tr:hover {
-            background-color: #e0f2f7;
+            background-color: #FFECB3; /* Light Saffron */
         }
 
         .tickets-table td.status-voted {
-            color: #00796b;
+            color: #FF9933; /* Saffron */
             font-weight: bold;
         }
 
         .tickets-table td.status-not-voted {
-            color: #d32f2f;
+            color: #D32F2F; /* Red - kept for danger */
             font-weight: bold;
         }
 
@@ -688,7 +725,7 @@
         }
 
         .modal-content h2 {
-            color: #004d40;
+            color: #FF6600; /* Darker Saffron */
             margin-bottom: 20px;
             text-align: center;
         }
@@ -701,7 +738,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #004d40;
+            color: #FF6600; /* Darker Saffron */
         }
 
         .modal-content input,
@@ -709,7 +746,7 @@
         .modal-content select {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #b2dfdb;
+            border: 2px solid #FFCC80; /* Light Saffron */
             border-radius: 8px;
             font-size: 1rem;
             transition: border 0.3s ease;
@@ -719,11 +756,11 @@
         .modal-content textarea:focus,
         .modal-content select:focus {
             outline: none;
-            border-color: #00796b;
+            border-color: #FF9933; /* Saffron */
         }
 
         .modal-content button {
-            background: #00796b;
+            background: #FF6600; /* Darker Saffron */
             color: white;
             border: none;
             padding: 12px 25px;
@@ -737,7 +774,7 @@
         }
 
         .modal-content button:hover {
-            background: #004d40;
+            background: #E65100; /* Even Darker Saffron */
             transform: translateY(-2px);
         }
 
@@ -746,7 +783,7 @@
             width: 100%;
             height: 40px; /* Adjust height for desired space */
             margin: 20px 0; /* Add vertical margin */
-            border-bottom: 2px dashed #b2dfdb; /* Optional: a dashed line */
+            border-bottom: 2px dashed #FFCC80; /* Light Saffron */
             grid-column: 1 / -1; /* Make it span all columns in the grid */
         }
 
@@ -755,17 +792,25 @@
             grid-column: 1 / -1; /* Span across all columns */
             text-align: center;
             font-size: 1.8rem;
-            color: #004d40; /* Deep Teal */
+            color: #FF6600; /* Darker Saffron */
             margin: 30px 0 15px 0;
             padding-bottom: 10px;
-            border-bottom: 3px solid #ffeb3b; /* Gold underline */
+            border-bottom: 3px solid #FF9933; /* Saffron underline */
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <h2>Location Selection</h2>
-        <div class="sidebar-section">
+        <div class="sidebar-section" id="managerSelectionSection">
+            <label for="managedBySelect">Select Manager:</label>
+            <select id="managedBySelect">
+                <option value="">-- Select Manager --</option>
+                <!-- Options will be dynamically generated from Firebase -->
+            </select>
+        </div>
+
+        <div class="sidebar-section" id="floorSelectionSection">
             <label for="floorSelect">Select Floor:</label>
             <select id="floorSelect">
                 <option value="">-- Select Floor --</option>
@@ -773,30 +818,18 @@
             </select>
         </div>
 
-        <div class="sidebar-section" id="roomSection" style="display: none;">
+        <div class="sidebar-section" id="roomSelectionSection" style="display: none;">
             <label for="roomSelect">Select Room:</label>
             <select id="roomSelect">
                 <option value="">-- Select Room --</option>
                 <!-- Options will be dynamically generated -->
             </select>
-        </div>
-
-        <div class="sidebar-section" id="cupSection" style="display: none;">
-            <label for="cupSelect">Select Cup:</label>
-            <select id="cupSelect">
-                <option value="">-- Select Cup --</option>
-                <!-- Options will be dynamically generated -->
-            </select>
-            <button id="addCupBtn" style="display: none;">Add Cup</button>
-            <div class="sidebar-cup-list" id="cupList">
-                <!-- Occupied/Available cups will be listed here -->
-            </div>
+            <button id="startVotingBtn">Start Voting</button>
         </div>
 
         <div class="user-info" id="sidebarUserInfo" style="display: none;">
-            Welcome, <span id="sidebarLoggedInUserName"></span> (MID: <span id="sidebarLoggedInUserMid"></span>)!
-            <p>Your Cup: <span id="selectedCupDisplay">N/A</span></p>
-            <p style="margin-top: 10px; font-size: 1.2rem; color: #a7ffeb;">Let's start voting for Shradh!</p>
+            Welcome, <span id="sidebarLoggedInUserName"></span>!
+            <p style="margin-top: 10px; font-size: 1.2rem; color: #FFFFFF;"><span id="sidebarSupervisingInfo"></span></p>
         </div>
 
         <!-- Moved Upgrade Account Section to Sidebar -->
@@ -805,6 +838,20 @@
             <p>Enter the admin code to gain administrative privileges.</p>
             <input type="password" id="adminCodeInput" placeholder="Admin Code">
             <button id="upgradeAdminBtn">Upgrade Account</button>
+        </div>
+
+        <!-- Managed By Section in Sidebar (for adding new managers) -->
+        <div class="sidebar-section" id="addManagerSection">
+            <div class="admin-only-section-managed-by">
+                <h3>Add New Manager</h3>
+                <div class="form-group">
+                    <label for="newManagerName">Manager Name</label>
+                    <input type="text" id="newManagerName" placeholder="Enter manager name">
+                </div>
+                <button class="submit-btn" id="addManagerBtn">
+                    <i class="fas fa-user-plus"></i> Add Manager
+                </button>
+            </div>
         </div>
     </div>
 
@@ -815,15 +862,12 @@
                 <p>Swaminarayan Gurukul International School, Hyderabad</p>
             </header>
             
-            <div class="login-section" id="loginSection">
-                <h2>Enter Your Details to Vote</h2>
-                <input type="text" id="userNameInput" placeholder="Your Name">
-                <input type="text" id="userMidInput" placeholder="Your MID (e.g., A_1234)">
-                <button id="loginBtn">Start Voting</button>
-            </div>
+            <!-- Login Section - Removed as per request -->
+            <div class="login-section" id="loginSection"></div>
 
             <div class="user-info" id="userInfo" style="display: none;">
-                Welcome, <span id="loggedInUserName"></span> (MID: <span id="loggedInUserMid"></span>)!
+                Welcome, <span id="loggedInUserName"></span>!
+                <p style="margin-top: 5px; font-size: 1rem; color: #FF9933;"><span id="supervisingInfo"></span></p>
             </div>
 
             <div class="admin-toggle" id="adminToggleContainer" style="display: none;">
@@ -864,14 +908,16 @@
                 <div class="instructions">
                     <h2>How to Use</h2>
                     <ul>
-                        <li>First, select your Floor, Room, and Cup from the sidebar.</li>
-                        <li>Then, enter your name and MID to start voting.</li>
+                        <li>First, select your Floor and Room from the sidebar, or select a Manager.</li>
+                        <li>If you are a room, click "Start Voting" to begin.</li>
+                        <li>If you are a manager, select your name, then select the Floor and Room you are supervising, and click "Start Voting" to vote on behalf of that room.</li>
                         <li>Click on the "Admin Mode" button (if you have admin access) to add or remove menu items.</li>
-                        <li>As a regular user, you can vote for your favorite menu items.</li>
-                        <li><strong>Each user can vote only once per menu item.</strong></li>
-                        <li><strong>Each user may vote for up to <em>2 items per category</em>. After you cast 2 votes in a category, that category is closed for you and you cannot vote more items in it.</strong></li>
+                        <li>As a regular user (room or manager supervising a room), you can vote for your favorite menu items.</li>
+                        <li><strong>Each room can vote only once per menu item.</strong></li>
+                        <li><strong>Each room may vote for up to <em>2 items per category</em>. After you cast 2 votes in a category, that category is closed for you and you cannot vote more items in it.</strong></li>
                         <li>Use the heart icon to show your preference for a dish.</li>
                         <li>Use the "Filter by Dish Category" dropdown to view specific types of dishes.</li>
+                        <li><strong>Managers can view the voting status but cannot vote directly for themselves; they vote on behalf of a room.</strong></li>
                     </ul>
                 </div>
             </div>
@@ -915,19 +961,40 @@
 
             <!-- Tickets Tab Content -->
             <div id="ticketsTabContent" class="tab-content">
-                <h2>Registered Users & Voting Status</h2>
+                <h2>Registered Rooms & Voting Status</h2>
+                <div class="filters-container" style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="ticketsFloorFilter">Filter by Floor:</label>
+                        <select id="ticketsFloorFilter" style="width: 100%;">
+                            <option value="All">All Floors</option>
+                            <!-- Options will be dynamically generated -->
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="ticketsRoomFilter">Filter by Room:</label>
+                        <select id="ticketsRoomFilter" style="width: 100%;">
+                            <option value="All">All Rooms</option>
+                            <!-- Options will be dynamically generated -->
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="ticketsManagerFilter">Filter by Manager:</label>
+                        <select id="ticketsManagerFilter" style="width: 100%;">
+                            <option value="All">All Managers</option>
+                            <!-- Options will be dynamically generated -->
+                        </select>
+                    </div>
+                </div>
                 <table class="tickets-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>MID</th>
-                            <th>Cup</th>
+                            <th>Room</th>
                             <th>Voting Status</th>
                             <th>Last Voted</th>
                         </tr>
                     </thead>
                     <tbody id="ticketsTableBody">
-                        <!-- User data will be loaded here -->
+                        <!-- Room data will be loaded here -->
                     </tbody>
                 </table>
             </div>
@@ -999,18 +1066,15 @@
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
         const menuRef = database.ref('menuItems');
-        const userVotesRef = database.ref('userVotes');
-        const cupOccupancyRef = database.ref('cupOccupancy'); // New Firebase reference for cup occupancy
-        const registeredUsersRef = database.ref('registeredUsers'); // New Firebase reference for registered users
+        const roomVotesRef = database.ref('roomVotes');
+        const registeredRoomsRef = database.ref('registeredRooms');
+        const managersRef = database.ref('managers'); // New Firebase reference for managers
 
         // DOM elements
-        const loginSection = document.getElementById('loginSection');
-        const userNameInput = document.getElementById('userNameInput');
-        const userMidInput = document.getElementById('userMidInput');
-        const loginBtn = document.getElementById('loginBtn');
+        const loginSection = document.getElementById('loginSection'); // Not used, but kept for context
         const userInfo = document.getElementById('userInfo');
         const loggedInUserName = document.getElementById('loggedInUserName');
-        const loggedInUserMid = document.getElementById('loggedInUserMid');
+        const supervisingInfo = document.getElementById('supervisingInfo'); // New element for supervising info
         const adminToggleContainer = document.getElementById('adminToggleContainer');
         const adminToggle = document.getElementById('adminToggle');
         const adminForm = document.getElementById('adminForm');
@@ -1019,24 +1083,28 @@
         const itemNameInput = document.getElementById('itemName');
         const itemDescInput = document.getElementById('itemDesc');
         const itemImageInput = document.getElementById('itemImage');
-        const itemCategoryInput = document.getElementById('itemCategory'); // New category input
+        const itemCategoryInput = document.getElementById('itemCategory');
         const upgradeAccountSection = document.getElementById('upgradeAccountSection');
         const adminCodeInput = document.getElementById('adminCodeInput');
         const upgradeAdminBtn = document.getElementById('upgradeAdminBtn');
-        const dishesDropdown = document.getElementById('dishesDropdown'); // New dishes dropdown
+        const dishesDropdown = document.getElementById('dishesDropdown');
 
         // Sidebar DOM elements
+        const floorSelectionSection = document.getElementById('floorSelectionSection');
+        const roomSelectionSection = document.getElementById('roomSelectionSection');
         const floorSelect = document.getElementById('floorSelect');
-        const roomSection = document.getElementById('roomSection');
         const roomSelect = document.getElementById('roomSelect');
-        const cupSection = document.getElementById('cupSection');
-        const cupSelect = document.getElementById('cupSelect');
-        const addCupBtn = document.getElementById('addCupBtn');
-        const cupList = document.getElementById('cupList');
+        const startVotingBtn = document.getElementById('startVotingBtn');
         const sidebarUserInfo = document.getElementById('sidebarUserInfo');
         const sidebarLoggedInUserName = document.getElementById('sidebarLoggedInUserName');
-        const sidebarLoggedInUserMid = document.getElementById('sidebarLoggedInUserMid');
-        const selectedCupDisplay = document.getElementById('selectedCupDisplay');
+        const sidebarSupervisingInfo = document.getElementById('sidebarSupervisingInfo'); // New element for sidebar supervising info
+
+        const managerSelectionSection = document.getElementById('managerSelectionSection');
+        const managedBySelect = document.getElementById('managedBySelect');
+        const addManagerSection = document.getElementById('addManagerSection');
+        const newManagerNameInput = document.getElementById('newManagerName');
+        const addManagerBtn = document.getElementById('addManagerBtn');
+        const adminOnlySectionManagedBy = document.querySelector('.admin-only-section-managed-by');
 
         // Tab elements
         const tabButtons = document.querySelectorAll('.tab-button');
@@ -1044,6 +1112,11 @@
         const adminTabContent = document.getElementById('adminTabContent');
         const ticketsTabContent = document.getElementById('ticketsTabContent');
         const ticketsTableBody = document.getElementById('ticketsTableBody');
+
+        // Tickets Tab Filters
+        const ticketsFloorFilter = document.getElementById('ticketsFloorFilter');
+        const ticketsRoomFilter = document.getElementById('ticketsRoomFilter');
+        const ticketsManagerFilter = document.getElementById('ticketsManagerFilter');
 
         // Edit Modal elements
         const editModal = document.getElementById('editModal');
@@ -1053,29 +1126,28 @@
         const editItemImage = document.getElementById('editItemImage');
         const editItemCategory = document.getElementById('editItemCategory');
         const saveEditBtn = document.getElementById('saveEditBtn');
-        const removeImageCheckbox = document.getElementById('removeImageCheckbox'); // New checkbox for removing image
+        const removeImageCheckbox = document.getElementById('removeImageCheckbox');
 
-        let currentUserName = null;
-        let currentUserMid = null;
+        let currentIdentifier = null; // Can be a room number or a manager ID (when manager is selected)
+        let currentRoomForVoting = null; // The room number that is currently voting (either directly or supervised by manager)
+        let currentManagerId = null; // Stores the ID of the selected manager
+        let isManager = false; // True if a manager is selected
         let isAdminMode = false;
         let menuItems = [];
-        let userVotedItems = {}; // flat mapping of itemId -> true (for current user)
-        let userCategoryVotes = {}; // mapping category -> {itemId: true}
-        let categoryCounts = {}; // mapping category -> number of votes by current user
-        let categoryClosed = {}; // mapping category -> boolean
+        let roomVotedItems = {}; // Stores votes for the current room
+        let roomCategoryVotes = {}; // Stores category votes for the current room
+        let categoryCounts = {};
+        let categoryClosed = {};
         let selectedFloor = null;
-        let selectedRoom = null;
-        let selectedCup = null;
-        let cupData = {}; // To store the occupancy status of cups
-        let currentFilterCategory = 'All'; // Default filter category
-        let allRegisteredUsers = {}; // To store all registered users for the tickets tab
-        let editingItemId = null; // To store the ID of the item being edited
+        let allRegisteredRooms = {};
+        let allManagers = {}; // New variable to store managers
+        let editingItemId = null;
+        let currentFilterCategory = 'All';
 
-        const ADMIN_CODE = "admin123";
+        const ADMIN_CODE = "SGISH"; // Changed admin code to "SGISH"
         const NUM_FLOORS = 6;
         const NUM_ROOMS_PER_FLOOR = 14;
-        const NUM_CUPS_PER_ROOM = 16;
-        const MAX_VOTES_PER_CATEGORY = 2; // <-- limit per category
+        const MAX_VOTES_PER_CATEGORY = 2;
 
         // Define the desired order of categories for "All Dishes" view
         const categoryOrder = [
@@ -1092,166 +1164,76 @@
 
         // Function to populate floor dropdown
         function populateFloors() {
+            floorSelect.innerHTML = '<option value="">-- Select Floor --</option>';
+            ticketsFloorFilter.innerHTML = '<option value="All">All Floors</option>';
             for (let i = 1; i <= NUM_FLOORS; i++) {
                 const option = document.createElement('option');
                 option.value = i;
                 option.textContent = `Floor ${i}`;
                 floorSelect.appendChild(option);
+
+                const filterOption = document.createElement('option');
+                filterOption.value = i;
+                filterOption.textContent = `Floor ${i}`;
+                ticketsFloorFilter.appendChild(filterOption);
             }
         }
 
         // Function to populate room dropdown based on selected floor
-        function populateRooms(floor) {
-            roomSelect.innerHTML = '<option value="">-- Select Room --</option>';
-            if (floor) {
-                roomSection.style.display = 'block';
-                const startRoom = (floor - 1) * 100 + 101; // e.g., Floor 1 starts at 101, Floor 2 at 201
+        function populateRooms(floor, targetSelect = roomSelect) {
+            targetSelect.innerHTML = '<option value="">-- Select Room --</option>';
+            if (targetSelect === ticketsRoomFilter) {
+                targetSelect.innerHTML = '<option value="All">All Rooms</option>';
+            }
+
+            if (floor && floor !== 'All') {
+                const startRoom = (floor - 1) * 100 + 101;
                 for (let i = 0; i < NUM_ROOMS_PER_FLOOR; i++) {
                     const roomNumber = startRoom + i;
                     const option = document.createElement('option');
                     option.value = roomNumber;
                     option.textContent = `Room ${roomNumber}`;
-                    roomSelect.appendChild(option);
+                    targetSelect.appendChild(option);
                 }
-            } else {
-                roomSection.style.display = 'none';
-            }
-            cupSection.style.display = 'none'; // Hide cup section when room changes
-            selectedRoom = null;
-            selectedCup = null;
-            renderCupList(); // Clear cup list
-        }
-
-        // Function to populate cup dropdown based on selected room
-        function populateCups(room) {
-            cupSelect.innerHTML = '<option value="">-- Select Cup --</option>';
-            if (room) {
-                cupSection.style.display = 'block';
-                for (let i = 1; i <= NUM_CUPS_PER_ROOM; i++) {
-                    const cupIdentifier = `${room}/${i}`;
-                    const option = document.createElement('option');
-                    option.value = cupIdentifier;
-                    option.textContent = `Cup ${i}`;
-                    cupSelect.appendChild(option);
-                }
-                addCupBtn.style.display = 'block'; // Show add cup button
-            } else {
-                cupSection.style.display = 'none';
-                addCupBtn.style.display = 'none';
-            }
-            selectedCup = null;
-            renderCupList(); // Re-render cup list for the new room
-        }
-
-        // Function to render the list of cups and their occupancy status
-        function renderCupList() {
-            cupList.innerHTML = '';
-            if (selectedFloor && selectedRoom) {
-                for (let i = 1; i <= NUM_CUPS_PER_ROOM; i++) {
-                    const cupIdentifier = `${selectedRoom}/${i}`;
-                    const cupItem = document.createElement('div');
-                    cupItem.className = 'sidebar-cup-item';
-
-                    const status = cupData[cupIdentifier] ? 'Occupied' : 'Available';
-                    const statusClass = cupData[cupIdentifier] ? 'occupied' : 'available';
-                    const occupiedBy = cupData[cupIdentifier] ? ` (${cupData[cupIdentifier].userName || 'N/A'} - ${cupData[cupIdentifier].userMid || 'N/A'})` : '';
-
-                    cupItem.innerHTML = `
-                        <span>Cup ${i}: <span class="cup-status ${statusClass}">${status}</span>${occupiedBy}</span>
-                        ${isAdminMode && cupData[cupIdentifier] ? `<button class="remove-cup-btn" data-cup-id="${cupIdentifier}">Remove</button>` : ''}
-                    `;
-                    cupList.appendChild(cupItem);
-                }
-
-                // Add event listeners for remove cup buttons (only in admin mode)
-                if (isAdminMode) {
-                    document.querySelectorAll('.remove-cup-btn').forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const cupId = e.target.dataset.cupId;
-                            removeCupOccupancy(cupId);
-                        });
-                    });
+            } else if (targetSelect === ticketsRoomFilter && floor === 'All') {
+                // Populate all rooms for the filter if "All Floors" is selected
+                for (let f = 1; f <= NUM_FLOORS; f++) {
+                    const startRoom = (f - 1) * 100 + 101;
+                    for (let i = 0; i < NUM_ROOMS_PER_FLOOR; i++) {
+                        const roomNumber = startRoom + i;
+                        const option = document.createElement('option');
+                        option.value = roomNumber;
+                        option.textContent = `Room ${roomNumber}`;
+                        targetSelect.appendChild(option);
+                    }
                 }
             }
-        }
 
-        // Function to add/occupy a cup
-        function addCupOccupancy() {
-            if (!selectedFloor || !selectedRoom || !selectedCup) {
-                alert('Please select a Floor, Room, and Cup first.');
-                return;
-            }
-            if (!currentUserName || !currentUserMid) {
-                alert('Please log in with your name and MID to occupy a cup.');
-                return;
-            }
-
-            if (cupData[selectedCup]) {
-                alert(`Cup ${selectedCup} is already occupied by ${cupData[selectedCup].userName}.`);
-                return;
-            }
-
-            const cupInfo = {
-                userName: currentUserName,
-                userMid: currentUserMid,
-                timestamp: firebase.database.ServerValue.TIMESTAMP
-            };
-
-            cupOccupancyRef.child(selectedCup).set(cupInfo)
-                .then(() => {
-                    alert(`Cup ${selectedCup} successfully occupied by ${currentUserName}.`);
-                    selectedCupDisplay.textContent = selectedCup;
-
-                    // Also register the user in the 'registeredUsers' node
-                    registeredUsersRef.child(currentUserMid).set({
-                        userName: currentUserName,
-                        cup: selectedCup,
-                        registrationTime: firebase.database.ServerValue.TIMESTAMP,
-                        hasVoted: false // Initialize voting status
-                    }).catch(error => {
-                        console.error("Error registering user: ", error);
-                    });
-
-                })
-                .catch(error => {
-                    console.error("Error occupying cup: ", error);
-                    alert("Failed to occupy cup.");
-                });
-        }
-
-        // Function to remove cup occupancy (Admin only)
-        function removeCupOccupancy(cupId) {
-            if (!isAdminMode) {
-                alert('You do not have permission to remove cup occupancy.');
-                return;
-            }
-            if (confirm(`Are you sure you want to remove occupancy for Cup ${cupId}?`)) {
-                cupOccupancyRef.child(cupId).remove()
-                    .then(() => {
-                        alert(`Occupancy for Cup ${cupId} removed.`);
-                        // Also remove user from registeredUsers if their cup is removed
-                        const userMidToRemove = Object.keys(allRegisteredUsers).find(mid => allRegisteredUsers[mid].cup === cupId);
-                        if (userMidToRemove) {
-                            registeredUsersRef.child(userMidToRemove).remove().catch(error => {
-                                console.error("Error removing user from registeredUsers: ", error);
-                            });
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error removing cup occupancy: ", error);
-                        alert("Failed to remove cup occupancy.");
-                    });
+            if (targetSelect === roomSelect) {
+                if (floor) {
+                    roomSelectionSection.style.display = 'block';
+                } else {
+                    roomSelectionSection.style.display = 'none';
+                }
+                currentRoomForVoting = null; // Reset room when floor changes
+                updateUserInfoDisplay();
+                updateVotingControlsVisibility();
             }
         }
 
-        // Helper to compute categoryCounts & categoryClosed from current userCategoryVotes
+        // Helper to compute categoryCounts & categoryClosed from current roomCategoryVotes
         function computeCategoryStatus() {
             categoryCounts = {};
             categoryClosed = {};
-            for (const cat in userCategoryVotes) {
-                const count = Object.keys(userCategoryVotes[cat] || {}).length;
-                categoryCounts[cat] = count;
-                categoryClosed[cat] = count >= MAX_VOTES_PER_CATEGORY;
+            const maxVotes = MAX_VOTES_PER_CATEGORY; 
+
+            // Only compute for the current room being voted for
+            if (currentRoomForVoting) {
+                for (const cat in roomCategoryVotes) {
+                    const count = Object.keys(roomCategoryVotes[cat] || {}).length;
+                    categoryCounts[cat] = count;
+                    categoryClosed[cat] = count >= maxVotes;
+                }
             }
         }
 
@@ -1259,9 +1241,8 @@
         function renderMenuItems() {
             menuGrid.innerHTML = '';
             
-            let itemsToDisplay = [...menuItems]; // Create a copy to sort
+            let itemsToDisplay = [...menuItems];
 
-            // Apply custom sorting only when "All Dishes" is selected
             if (currentFilterCategory === 'All') {
                 itemsToDisplay.sort((a, b) => {
                     const categoryA = a.category || 'Uncategorized';
@@ -1270,14 +1251,12 @@
                     const indexA = categoryOrder.indexOf(categoryA);
                     const indexB = categoryOrder.indexOf(categoryB);
 
-                    // Handle categories not in categoryOrder (place them at the end)
                     const finalIndexA = indexA === -1 ? categoryOrder.length : indexA;
                     const finalIndexB = indexB === -1 ? categoryOrder.length : indexB;
 
                     if (finalIndexA !== finalIndexB) {
                         return finalIndexA - finalIndexB;
                     } else {
-                        // If categories are the same, sort alphabetically by name
                         return a.name.localeCompare(b.name);
                     }
                 });
@@ -1287,12 +1266,11 @@
                 return currentFilterCategory === 'All' || item.category === currentFilterCategory;
             });
 
-            let lastCategory = null; // Track the last category rendered
+            let lastCategory = null;
 
             filteredItems.forEach(item => {
                 const currentCategory = item.category || 'Uncategorized';
 
-                // Add a category header if the category changes and it's not the very first item
                 if (currentFilterCategory === 'All' && currentCategory !== lastCategory) {
                     const header = document.createElement('h2');
                     header.className = 'category-header';
@@ -1304,14 +1282,12 @@
                 menuItem.className = 'menu-item';
                 menuItem.dataset.id = item.id;
                 
-                // Removed image URL and random image selection
-                const displayImage = ''; // No image
+                const displayImage = ''; // Assuming no images for now, or you'd add item.image here
                 
-                const hasVoted = currentUserMid && userVotedItems[item.id];
+                const hasVoted = currentRoomForVoting && roomVotedItems[item.id];
                 const cat = item.category || 'Uncategorized';
                 const isCatClosed = categoryClosed[cat];
 
-                // Determine button HTML for this item:
                 let actionButtonHTML = '';
                 if (isAdminMode) {
                     actionButtonHTML = `
@@ -1322,9 +1298,9 @@
                             <i class="fas fa-edit"></i> Edit
                         </button>
                     `;
-                } else if (!currentUserMid) {
-                    actionButtonHTML = ''; // Not logged in, no vote buttons
-                } else {
+                } else if (!currentRoomForVoting) { // If no room is selected for voting
+                    actionButtonHTML = ''; // No voting buttons
+                } else { // A room is selected for voting (either directly or supervised)
                     if (hasVoted) {
                         actionButtonHTML = `<button class="vote-btn voted" data-id="${item.id}" disabled>
                                                 <i class="fas fa-heart"></i> Voted
@@ -1356,10 +1332,9 @@
                 `;
                 
                 menuGrid.appendChild(menuItem);
-                lastCategory = currentCategory; // Update last category
+                lastCategory = currentCategory;
             });
 
-            // Attach handlers
             if (isAdminMode) {
                 document.querySelectorAll('.remove-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
@@ -1373,7 +1348,7 @@
                         openEditModal(id);
                     });
                 });
-            } else if (currentUserMid) {
+            } else if (currentRoomForVoting) { // Only attach vote listeners if a room is selected for voting
                 document.querySelectorAll('.vote-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         const id = e.target.closest('.vote-btn').dataset.id;
@@ -1388,7 +1363,7 @@
             const name = itemNameInput.value.trim();
             const description = itemDescInput.value.trim();
             const image = itemImageInput.value.trim();
-            const category = itemCategoryInput.value; // Get selected category
+            const category = itemCategoryInput.value;
             
             if (!name) {
                 alert('Please enter a name for the menu item');
@@ -1403,7 +1378,7 @@
                 name,
                 description,
                 image: image,
-                category: category, // Add category to the new item
+                category: category,
                 votes: 0
             };
             
@@ -1413,7 +1388,7 @@
                     itemNameInput.value = '';
                     itemDescInput.value = '';
                     itemImageInput.value = '';
-                    itemCategoryInput.value = ''; // Reset category dropdown
+                    itemCategoryInput.value = '';
                 })
                 .catch(error => {
                     console.error("Error adding menu item: ", error);
@@ -1444,7 +1419,7 @@
                 editItemDesc.value = itemToEdit.description;
                 editItemImage.value = itemToEdit.image;
                 editItemCategory.value = itemToEdit.category;
-                removeImageCheckbox.checked = false; // Ensure checkbox is unchecked when opening
+                removeImageCheckbox.checked = false;
                 editModal.style.display = 'block';
             }
         }
@@ -1455,7 +1430,7 @@
 
             const updatedName = editItemName.value.trim();
             const updatedDesc = editItemDesc.value.trim();
-            let updatedImage = editItemImage.value.trim(); // Use let as it might change
+            let updatedImage = editItemImage.value.trim();
             const updatedCategory = editItemCategory.value;
 
             if (!updatedName) {
@@ -1467,7 +1442,6 @@
                 return;
             }
 
-            // If "Remove Image" checkbox is checked, set image to empty string
             if (removeImageCheckbox.checked) {
                 updatedImage = '';
             }
@@ -1475,7 +1449,7 @@
             menuRef.child(editingItemId).update({
                 name: updatedName,
                 description: updatedDesc,
-                image: updatedImage, // Use the potentially cleared image value
+                image: updatedImage,
                 category: updatedCategory
             })
             .then(() => {
@@ -1491,26 +1465,24 @@
 
         // Function to vote for a menu item and update Firebase
         function voteForItem(id) {
-            if (!currentUserMid) {
-                alert('Please log in with your MID to vote.');
+            if (!currentRoomForVoting) { // Ensure a room is selected for voting
+                alert('Please select a Room to vote.');
                 return;
             }
 
-            // Get clicked item's category
             const item = menuItems.find(it => it.id === id);
             const cat = (item && item.category) ? item.category : 'Uncategorized';
 
-            // Check if user already voted this item
-            if (userVotedItems[id]) {
+            if (roomVotedItems[id]) {
                 alert('You have already voted for this item.');
                 return;
             }
 
-            // Check if category closed for this user
+            const maxVotes = MAX_VOTES_PER_CATEGORY;
             const currentCatCount = categoryCounts[cat] || 0;
-            if (currentCatCount >= MAX_VOTES_PER_CATEGORY) {
-                alert(`You have already used your ${MAX_VOTES_PER_CATEGORY} votes for category "${cat}".`);
-                // re-render to ensure UI reflects closure
+
+            if (currentCatCount >= maxVotes) {
+                alert(`You have already used your ${maxVotes} votes for category "${cat}".`);
                 computeCategoryStatus();
                 renderMenuItems();
                 return;
@@ -1524,25 +1496,23 @@
                 return currentData;
             })
             .then(() => {
-                // Record user vote flat
-                userVotesRef.child(currentUserMid).child('items').child(id).set(true)
+                roomVotesRef.child(currentRoomForVoting).child('items').child(id).set(true)
                     .then(() => {
-                        // Record user vote under category mapping
-                        userVotesRef.child(currentUserMid).child('categories').child(cat).child(id).set(true)
+                        roomVotesRef.child(currentRoomForVoting).child('categories').child(cat).child(id).set(true)
                             .then(() => {
-                                // Update local caches
-                                userVotedItems[id] = true;
-                                if (!userCategoryVotes[cat]) userCategoryVotes[cat] = {};
-                                userCategoryVotes[cat][id] = true;
+                                roomVotedItems[id] = true;
+                                if (!roomCategoryVotes[cat]) roomCategoryVotes[cat] = {};
+                                roomCategoryVotes[cat][id] = true;
                                 computeCategoryStatus();
                                 renderMenuItems();
 
-                                // Update hasVoted status for the user in registeredUsers
-                                registeredUsersRef.child(currentUserMid).update({
+                                registeredRoomsRef.child(currentRoomForVoting).update({
                                     hasVoted: true,
-                                    lastVoted: firebase.database.ServerValue.TIMESTAMP
+                                    lastVoted: firebase.database.ServerValue.TIMESTAMP,
+                                    // Store the manager who supervised this vote, if applicable
+                                    supervisedBy: isManager ? allManagers[currentManagerId].name : null
                                 }).catch(error => {
-                                    console.error("Error updating user voting status: ", error);
+                                    console.error("Error updating room voting status: ", error);
                                 });
 
                             })
@@ -1552,7 +1522,7 @@
                             });
                     })
                     .catch(error => {
-                        console.error("Error recording user vote: ", error);
+                        console.error("Error recording room vote: ", error);
                         alert("Failed to record your vote.");
                     });
             })
@@ -1565,15 +1535,34 @@
         // Function to render the tickets table
         function renderTicketsTable() {
             ticketsTableBody.innerHTML = '';
-            for (const mid in allRegisteredUsers) {
-                const user = allRegisteredUsers[mid];
+            const selectedFloorFilter = ticketsFloorFilter.value;
+            const selectedRoomFilter = ticketsRoomFilter.value;
+            const selectedManagerFilter = ticketsManagerFilter.value;
+
+            for (const roomNum in allRegisteredRooms) {
+                const room = allRegisteredRooms[roomNum];
+                const roomNumber = parseInt(roomNum);
+                const roomFloor = Math.floor((roomNumber - 101) / 100) + 1;
+
+                // Apply filters
+                if (selectedFloorFilter !== 'All' && roomFloor !== parseInt(selectedFloorFilter)) {
+                    continue;
+                }
+                if (selectedRoomFilter !== 'All' && roomNumber !== parseInt(selectedRoomFilter)) {
+                    continue;
+                }
+                if (selectedManagerFilter !== 'All') {
+                    const managerName = allManagers[selectedManagerFilter] ? allManagers[selectedManagerFilter].name : null;
+                    if (room.supervisedBy !== managerName) {
+                        continue;
+                    }
+                }
+
                 const row = ticketsTableBody.insertRow();
-                row.insertCell().textContent = user.userName || 'N/A';
-                row.insertCell().textContent = mid;
-                row.insertCell().textContent = user.cup || 'N/A';
+                row.insertCell().textContent = roomNum;
                 
                 const votingStatusCell = row.insertCell();
-                if (user.hasVoted) {
+                if (room.hasVoted) {
                     votingStatusCell.textContent = 'Voted';
                     votingStatusCell.classList.add('status-voted');
                 } else {
@@ -1582,12 +1571,132 @@
                 }
 
                 const lastVotedCell = row.insertCell();
-                if (user.lastVoted) {
-                    const date = new Date(user.lastVoted);
-                    lastVotedCell.textContent = date.toLocaleString();
+                if (room.lastVoted) {
+                    const date = new Date(room.lastVoted);
+                    let lastVotedText = date.toLocaleString();
+                    if (room.supervisedBy) {
+                        lastVotedText += ` (by ${room.supervisedBy})`;
+                    }
+                    lastVotedCell.textContent = lastVotedText;
                 } else {
                     lastVotedCell.textContent = 'N/A';
                 }
+            }
+        }
+
+        // Function to populate the "Managed By" dropdown
+        function populateManagedByDropdown() {
+            managedBySelect.innerHTML = '<option value="">-- Select Manager --</option>';
+            ticketsManagerFilter.innerHTML = '<option value="All">All Managers</option>';
+            for (const id in allManagers) {
+                const manager = allManagers[id];
+                const option = document.createElement('option');
+                option.value = id;
+                option.textContent = manager.name;
+                managedBySelect.appendChild(option);
+
+                const filterOption = document.createElement('option');
+                filterOption.value = id;
+                filterOption.textContent = manager.name;
+                ticketsManagerFilter.appendChild(filterOption);
+            }
+        }
+
+        // Function to add a new manager
+        function addManager() {
+            const name = newManagerNameInput.value.trim();
+            if (!name) {
+                alert('Please enter the manager name.');
+                return;
+            }
+
+            // Generate a unique ID for the manager
+            const newManagerRef = managersRef.push();
+            newManagerRef.set({
+                name: name,
+                id: newManagerRef.key // Store the generated key as ID
+            })
+            .then(() => {
+                alert('Manager added successfully!');
+                newManagerNameInput.value = '';
+            })
+            .catch(error => {
+                console.error("Error adding manager: ", error);
+                alert("Failed to add manager.");
+            });
+        }
+
+        // Function to update user info display
+        function updateUserInfoDisplay() {
+            if (currentManagerId) { // A manager is selected
+                isManager = true;
+                loggedInUserName.textContent = `Manager ${allManagers[currentManagerId].name}`;
+                sidebarLoggedInUserName.textContent = `Manager ${allManagers[currentManagerId].name}`;
+                
+                if (currentRoomForVoting) {
+                    supervisingInfo.textContent = `Supervising Room ${currentRoomForVoting}`;
+                    sidebarSupervisingInfo.textContent = `Supervising Room ${currentRoomForVoting}`;
+                } else {
+                    supervisingInfo.textContent = 'Please select a room to supervise.';
+                    sidebarSupervisingInfo.textContent = 'Please select a room to supervise.';
+                }
+                userInfo.style.display = 'block';
+                sidebarUserInfo.style.display = 'block';
+
+            } else if (currentIdentifier) { // A room is selected directly (not by manager)
+                isManager = false;
+                loggedInUserName.textContent = `Room ${currentIdentifier}`;
+                sidebarLoggedInUserName.textContent = `Room ${currentIdentifier}`;
+                supervisingInfo.textContent = 'Let\'s start voting for Shradh!';
+                sidebarSupervisingInfo.textContent = 'Let\'s start voting for Shradh!';
+                userInfo.style.display = 'block';
+                sidebarUserInfo.style.display = 'block';
+                currentRoomForVoting = currentIdentifier; // Set the room for voting
+            } else { // Nothing selected
+                currentRoomForVoting = null;
+                isManager = false;
+                userInfo.style.display = 'none';
+                sidebarUserInfo.style.display = 'none';
+            }
+            renderMenuItems(); // Re-render to update vote buttons visibility
+        }
+
+        // Function to control visibility of voting-related controls
+        function updateVotingControlsVisibility() {
+            if (currentManagerId) { // Manager is selected
+                floorSelectionSection.style.display = 'block';
+                floorSelect.disabled = false;
+                if (selectedFloor) {
+                    roomSelectionSection.style.display = 'block';
+                    roomSelect.disabled = false;
+                    startVotingBtn.style.display = 'block';
+                    startVotingBtn.disabled = !roomSelect.value; // Enable only if room is selected
+                } else {
+                    roomSelectionSection.style.display = 'none';
+                    startVotingBtn.style.display = 'none';
+                }
+            } else { // No manager selected, or a room is selected directly
+                floorSelectionSection.style.display = 'block';
+                floorSelect.disabled = false;
+                if (selectedFloor) {
+                    roomSelectionSection.style.display = 'block';
+                    roomSelect.disabled = false;
+                    startVotingBtn.style.display = 'block';
+                    startVotingBtn.disabled = !roomSelect.value; // Enable only if room is selected
+                } else {
+                    roomSelectionSection.style.display = 'none';
+                    startVotingBtn.style.display = 'none';
+                }
+            }
+            renderMenuItems(); // Re-render to update vote buttons visibility
+        }
+
+        // Function to toggle admin-only elements visibility
+        function updateAdminVisibility() {
+            if (isAdminMode) {
+                adminOnlySectionManagedBy.style.display = 'block';
+            } else {
+                adminOnlySectionManagedBy.style.display = 'none';
             }
         }
 
@@ -1595,98 +1704,99 @@
         floorSelect.addEventListener('change', (e) => {
             selectedFloor = e.target.value;
             populateRooms(selectedFloor);
+            currentRoomForVoting = null; // Reset room for voting when floor changes
+            updateUserInfoDisplay();
+            updateVotingControlsVisibility();
         });
 
         roomSelect.addEventListener('change', (e) => {
-            selectedRoom = e.target.value;
-            populateCups(selectedRoom);
+            currentIdentifier = e.target.value; // This is the selected room number
+            currentRoomForVoting = currentIdentifier; // This room will be used for voting
+            updateUserInfoDisplay();
+            updateVotingControlsVisibility();
         });
 
-        cupSelect.addEventListener('change', (e) => {
-            selectedCup = e.target.value;
-            // Optionally, highlight the selected cup in the list or update a display
-        });
-
-        addCupBtn.addEventListener('click', addCupOccupancy);
-
-        loginBtn.addEventListener('click', () => {
-            const userName = userNameInput.value.trim();
-            const userMid = userMidInput.value.trim();
-            
-            // Regex for the new MID format: A followed by one uppercase letter, then 4 digits
-            const midFormatRegex = /^A[A-Z]\d{4}$/;
-
-            if (!selectedFloor || !selectedRoom || !selectedCup) {
-                alert('Please select your Floor, Room, and Cup from the sidebar first.');
+        startVotingBtn.addEventListener('click', () => {
+            if (!currentRoomForVoting) {
+                alert('Please select a Floor and Room first.');
                 return;
             }
 
-            if (!userName || !userMid) {
-                alert('Please enter both your name and MID to proceed.');
-                return;
-            }
-
-            // Validate userMid against the new format
-            if (!midFormatRegex.test(userMid)) {
-                alert('Your MID must follow the format: A followed by one uppercase letter, then 4 digits (e.g., A_1234).');
-                return; // Stop the login process if format is incorrect
-            }
-
-            // Check if the MID is already registered
-            registeredUsersRef.child(userMid).once('value', (snapshot) => {
+            registeredRoomsRef.child(currentRoomForVoting).once('value', (snapshot) => {
                 if (snapshot.exists()) {
-                    alert('This MID is already registered. Please use a different MID or contact support.');
-                    return; // Stop the login process
-                } else {
-                    // Proceed with login if MID is not registered
-                    currentUserName = userName;
-                    currentUserMid = userMid;
-                    loginSection.style.display = 'none';
-                    userInfo.style.display = 'block';
-                    loggedInUserName.textContent = currentUserName;
-                    loggedInUserMid.textContent = currentUserMid;
-
-                    // Update sidebar user info
-                    sidebarUserInfo.style.display = 'block';
-                    sidebarLoggedInUserName.textContent = currentUserName;
-                    sidebarLoggedInUserMid.textContent = currentUserMid;
-                    selectedCupDisplay.textContent = selectedCup; // Update selected cup in sidebar
-                    
-                    // Load user's past votes from Firebase using MID as the key
-                    userVotesRef.child(currentUserMid).once('value', (snapshot) => {
-                        const val = snapshot.val() || {};
-                        userVotedItems = {};
-                        userCategoryVotes = {};
-                        // Normalize. We expect structure: { items: {id:true...}, categories: {cat:{id:true}} }
+                    // Room is already registered, load its votes
+                    alert(`Voting session started for Room ${currentRoomForVoting}!`);
+                    roomVotesRef.child(currentRoomForVoting).once('value', (voteSnapshot) => {
+                        const val = voteSnapshot.val() || {};
+                        roomVotedItems = {};
+                        roomCategoryVotes = {};
                         if (val.items) {
                             for (const id in val.items) {
-                                userVotedItems[id] = true;
+                                roomVotedItems[id] = true;
                             }
                         }
                         if (val.categories) {
                             for (const cat in val.categories) {
-                                userCategoryVotes[cat] = val.categories[cat] || {};
+                                roomCategoryVotes[cat] = val.categories[cat] || {};
                             }
                         }
                         computeCategoryStatus();
                         renderMenuItems();
                     });
-
-                    // Automatically occupy the selected cup upon login and register user
-                    addCupOccupancy();
+                } else {
+                    // Room is not registered, register it
+                    registeredRoomsRef.child(currentRoomForVoting).set({
+                        registrationTime: firebase.database.ServerValue.TIMESTAMP,
+                        hasVoted: false,
+                        supervisedBy: isManager ? allManagers[currentManagerId].name : null
+                    }).then(() => {
+                        alert(`Voting started for Room ${currentRoomForVoting}!`);
+                        roomVotedItems = {}; // Clear previous votes
+                        roomCategoryVotes = {}; // Clear previous category votes
+                        computeCategoryStatus();
+                        renderMenuItems();
+                    }).catch(error => {
+                        console.error("Error registering room: ", error);
+                        alert("Failed to start voting for this room.");
+                    });
                 }
             });
         });
 
+        managedBySelect.addEventListener('change', (e) => {
+            currentManagerId = e.target.value;
+            if (currentManagerId) {
+                isManager = true;
+                // Reset room selection when manager is selected
+                floorSelect.value = '';
+                roomSelect.innerHTML = '<option value="">-- Select Room --</option>';
+                selectedFloor = null;
+                currentIdentifier = null; // Clear direct room selection
+                currentRoomForVoting = null; // Clear the room being voted for
+                
+                // Managers don't vote directly, so clear their vote states
+                roomVotedItems = {}; 
+                roomCategoryVotes = {}; 
+                computeCategoryStatus(); 
+                updateUserInfoDisplay();
+                updateVotingControlsVisibility();
+            } else {
+                currentManagerId = null;
+                isManager = false;
+                currentIdentifier = null; // Clear direct room selection
+                currentRoomForVoting = null; // Clear the room being voted for
+                updateUserInfoDisplay();
+                updateVotingControlsVisibility();
+            }
+        });
+
         adminToggle.addEventListener('click', () => {
             isAdminMode = !isAdminMode;
-            // adminForm.style.display = isAdminMode ? 'block' : 'none'; // This is now handled by tabs
             adminToggle.innerHTML = isAdminMode ? 
                 '<i class="fas fa-lock-open"></i> Exit Admin Mode' : 
                 '<i class="fas fa-lock"></i> Admin Mode';
-            renderMenuItems(); // Re-render to show/hide admin buttons
-            renderCupList(); // Re-render cup list to show/hide remove buttons
-            // If admin mode is toggled, ensure the correct tab is shown
+            renderMenuItems();
+            updateAdminVisibility();
             if (isAdminMode) {
                 document.querySelector('.tab-button[data-tab="admin"]').click();
             } else {
@@ -1695,17 +1805,18 @@
         });
 
         addItemBtn.addEventListener('click', addMenuItem);
+        addManagerBtn.addEventListener('click', addManager);
 
         upgradeAdminBtn.addEventListener('click', () => {
             const enteredCode = adminCodeInput.value.trim();
             if (enteredCode === ADMIN_CODE) {
                 alert('Admin access granted!');
                 adminToggleContainer.style.display = 'flex';
-                upgradeAccountSection.style.display = 'none'; // Hide from sidebar too
+                upgradeAccountSection.style.display = 'none';
                 adminCodeInput.value = '';
-                isAdminMode = true; // Set admin mode on upgrade
+                isAdminMode = true;
                 adminToggle.innerHTML = '<i class="fas fa-lock-open"></i> Exit Admin Mode';
-                // Automatically switch to admin tab after upgrade
+                updateAdminVisibility();
                 document.querySelector('.tab-button[data-tab="admin"]').click();
             } else {
                 alert('Incorrect admin code.');
@@ -1714,7 +1825,7 @@
 
         dishesDropdown.addEventListener('change', (e) => {
             currentFilterCategory = e.target.value;
-            renderMenuItems(); // Re-render menu items based on the selected filter
+            renderMenuItems();
         });
 
         // Tab switching logic
@@ -1722,11 +1833,9 @@
             button.addEventListener('click', () => {
                 const targetTab = button.dataset.tab;
 
-                // Deactivate all tab buttons and hide all tab contents
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
-                // Activate the clicked tab button and show its content
                 button.classList.add('active');
                 if (targetTab === 'voting') {
                     votingTabContent.classList.add('active');
@@ -1735,20 +1844,33 @@
                         adminTabContent.classList.add('active');
                     } else {
                         alert('You need admin privileges to access this tab.');
-                        // Revert to the previous tab if not admin
                         document.querySelector('.tab-button[data-tab="voting"]').click();
                     }
                 } else if (targetTab === 'tickets') {
                     if (isAdminMode) {
                         ticketsTabContent.classList.add('active');
-                        renderTicketsTable(); // Render tickets table when tab is active
+                        renderTicketsTable(); // Render table when tab is active
                     } else {
                         alert('You need admin privileges to access this tab.');
-                        // Revert to the previous tab if not admin
                         document.querySelector('.tab-button[data-tab="voting"]').click();
                     }
                 }
             });
+        });
+
+        // Tickets Tab Filter Event Listeners
+        ticketsFloorFilter.addEventListener('change', (e) => {
+            const selectedFloor = e.target.value;
+            populateRooms(selectedFloor, ticketsRoomFilter); // Populate rooms filter based on floor
+            renderTicketsTable();
+        });
+
+        ticketsRoomFilter.addEventListener('change', () => {
+            renderTicketsTable();
+        });
+
+        ticketsManagerFilter.addEventListener('change', () => {
+            renderTicketsTable();
         });
 
         // Edit Modal Event Listeners
@@ -1773,29 +1895,36 @@
             for (let id in data) {
                 menuItems.push({ id, ...data[id] });
             }
-            // If user logged in, re-compute and render; otherwise just render
             computeCategoryStatus();
             renderMenuItems();
         });
 
-        // Listen for changes in cup occupancy from Firebase
-        cupOccupancyRef.on('value', (snapshot) => {
-            cupData = snapshot.val() || {};
-            renderCupList(); // Update the cup list whenever occupancy changes
-        });
-
-        // Listen for changes in registered users from Firebase
-        registeredUsersRef.on('value', (snapshot) => {
-            allRegisteredUsers = snapshot.val() || {};
-            // Only re-render the tickets table if the tickets tab is currently active
+        // Listen for changes in registered rooms from Firebase
+        registeredRoomsRef.on('value', (snapshot) => {
+            allRegisteredRooms = snapshot.val() || {};
             if (ticketsTabContent.classList.contains('active')) {
                 renderTicketsTable();
             }
         });
 
+        // Listen for changes in managers from Firebase
+        managersRef.on('value', (snapshot) => {
+            allManagers = snapshot.val() || {};
+            populateManagedByDropdown();
+            updateUserInfoDisplay(); // Update user info if a manager is currently selected
+            updateVotingControlsVisibility(); // Ensure controls are updated based on manager status
+            if (ticketsTabContent.classList.contains('active')) {
+                renderTicketsTable(); // Re-render tickets table if manager data changes
+            }
+        });
+
         // Initial setup
         populateFloors();
-        renderMenuItems(); // Initial render of menu items
+        populateRooms('All', ticketsRoomFilter); // Populate all rooms for the tickets filter initially
+        renderMenuItems();
+        updateUserInfoDisplay();
+        updateAdminVisibility();
+        updateVotingControlsVisibility(); // Call initially to set correct state
     </script>
 </body>
 </html>
