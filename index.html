@@ -1282,7 +1282,8 @@
                 menuItem.className = 'menu-item';
                 menuItem.dataset.id = item.id;
                 
-                const displayImage = ''; // Assuming no images for now, or you'd add item.image here
+                // Use item.image directly for display
+                const displayImage = item.image; 
                 
                 const hasVoted = currentRoomForVoting && roomVotedItems[item.id];
                 const cat = item.category || 'Uncategorized';
